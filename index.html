@@ -5,42 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>İrem Bekdemir</title>
   
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* Light Glittery Silver Background Theme */
-      --bg-color: #f3f4f6;
-      --bg-pattern: radial-gradient(circle, rgba(255,255,255,0.85) 0%, rgba(229,231,235,0.7) 100%),
-                          radial-gradient(1.2px 1.2px at 20px 30px, #b0b0b0, rgba(0,0,0,0)),
-                          radial-gradient(1.5px 1.5px at 50px 80px, #999999, rgba(0,0,0,0)),
-                          radial-gradient(1px 1px at 90px 40px, #cccccc, rgba(0,0,0,0));
+      --bg-color: #e2e8f0;
+      --bg-pattern: 
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.95), rgba(203, 213, 225, 0.7)),
+        radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 40px 70px, #e2e8f0, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #cbd5e1, rgba(0,0,0,0));
       
-      --card-bg: rgba(255, 255, 255, 0.9);
-      --text-main: #1f2937;
-      --text-muted: #4b5563;
-      --accent: #374151;
-      --accent-hover: #111827;
-      --border: #d1d5db;
-      --tag-bg: #e5e7eb;
+      --card-bg: rgba(255, 255, 255, 0.82); 
+      --text-main: #0f172a;                 
+      --text-muted: #334155;                
+      --accent: #475569;                    
+      --accent-hover: #090d16;              
+      --border: #94a3b8;                    
+      --tag-bg: #e2e8f0;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    
     body {
       background-color: var(--bg-color);
       background-image: var(--bg-pattern);
-      background-size: 100% 100%, 120px 120px, 180px 180px, 150px 150px;
+      background-size: 100% 100%, 80px 80px, 120px 120px, 100px 100px, 140px 140px;
       color: var(--text-main);
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
@@ -68,7 +61,7 @@
       object-fit: cover;
       margin-bottom: 1rem;
       border: 3px solid #ffffff;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 10px rgba(200, 200, 200, 0.5);
+      box-shadow: 0 0 15px rgba(203, 213, 225, 0.9), 0 0 30px rgba(255, 255, 255, 0.8);
     }
 
     .name {
@@ -115,8 +108,8 @@
       border-radius: 12px;
       padding: 1.5rem;
       margin-bottom: 1.25rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(148, 163, 184, 0.35), 0 0 10px rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
     }
 
     .card-title {
@@ -244,7 +237,7 @@
     <header class="profile-header">
       <img src="profile.jpg" alt="İrem Bekdemir" class="avatar">
       <h1 class="name">İrem Bekdemir</h1>
-      <p class="title">AI Engineering Student & Writer</p>
+      <p class="title">AI Engineering & Robotics | Literature & Art </p>
       
       <!-- Typewriter Area -->
       <div class="bio-container">
@@ -254,8 +247,8 @@
 
     <!-- Card 1: About -->
     <section class="card">
-      <h2 class="card-title"><i class="fa-solid fa-user"></i> About</h2>
-      <p>I am an Artificial Intelligence Engineering undergraduate at Hacettepe University. My focus lies at the intersection of bio-inspired AI, knowledge graphs, and literary arts.</p>
+      <h2 class="card-title"><i class="fa-solid fa-user"></i> About Me </h2>
+      <p>I am an Artificial Intelligence Engineering undergraduate at Hacettepe University. My technical exploration revolves around computational biology alongside the artificial intelligence, robotics and autonomous systems.</p>
     </section>
 
     <!-- Card 2: Technical Focus -->
@@ -263,10 +256,9 @@
       <h2 class="card-title"><i class="fa-solid fa-code"></i> Technical Focus</h2>
       <div class="tag-container">
         <span class="tag">Python</span>
-        <span class="tag">C++</span>
+        <span class="tag">JAVA</span>
         <span class="tag">Graph Neural Networks</span>
         <span class="tag">RAG Architectures</span>
-        <span class="tag">ROS / ROS 2</span>
         <span class="tag">PyTorch</span>
       </div>
     </section>
@@ -293,7 +285,7 @@
         </button>
         <div id="penDropdown" class="dropdown-content">
           <a href="https://www.togart.org" target="_blank">togART</a>
-          <a href="https://www.togart.org" target="_blank">Serendipite</a>
+          <a href="https://https://drive.google.com/file/d/1x1SDc6aQTl7SSVCv8yH0gdjEecLCCy_k/view?fbclid=PAZXh0bgNhZW0CMTEAcGRvZgRzcnRjBmFwcF9pZAwyNTYyODEwNDA1NTgAAafzXNiVwDaLzU3lZ-hFtjzKRnhJHwmOJ6nynHL2KV-6eSmH68Iy7k2CUD1LKA_aem_b_L3VgFc1yEkYLTVpLcCDg" target="_blank">Sérendipité</a>
           <a href="https://karakiyisifanzin.blogspot.com" target="_blank">Karakıyısı</a>
         </div>
       </div>
@@ -303,7 +295,7 @@
 
   <script>
     // 1. Typewriter Animation Effect
-    const bioText = "Hi! Welcome to my personal website. This place brings together my technical background and artistic work—from code structures to poetry and prose.";
+    const bioText = "Hi! Welcome to my personal website. This place is a bit controversial, since it contains both my technical and artistic work. Which side you are looking for, links are provided below!";
     let index = 0;
     const speed = 35;
 
