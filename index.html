@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İrem Bekdemir</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Light Glittery Silver Background Theme */
+      --bg-color: #f3f4f6;
+      --bg-pattern: radial-gradient(circle, rgba(255,255,255,0.85) 0%, rgba(229,231,235,0.7) 100%),
+                          radial-gradient(1.2px 1.2px at 20px 30px, #b0b0b0, rgba(0,0,0,0)),
+                          radial-gradient(1.5px 1.5px at 50px 80px, #999999, rgba(0,0,0,0)),
+                          radial-gradient(1px 1px at 90px 40px, #cccccc, rgba(0,0,0,0));
+      
+      --card-bg: rgba(255, 255, 255, 0.9);
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --accent: #374151;
+      --accent-hover: #111827;
+      --border: #d1d5db;
+      --tag-bg: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      background-image: var(--bg-pattern);
+      background-size: 100% 100%, 120px 120px, 180px 180px, 150px 150px;
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    /* Profile Section */
+    .profile-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 10px rgba(200, 200, 200, 0.5);
+    }
+
+    .name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .title {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    /* Typewriter Section */
+    .bio-container {
+      min-height: 60px;
+      margin-top: 0.5rem;
+    }
+
+    .bio {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto;
+      font-family: 'JetBrains Mono', monospace;
+      border-right: 2px solid var(--text-main);
+      display: inline-block;
+      white-space: normal;
+      animation: blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: var(--text-main); }
+    }
+
+    /* Card Structure */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(8px);
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-title i {
+      color: var(--accent);
+    }
+
+    /* Tags */
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      background-color: var(--tag-bg);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+    }
+
+    /* Socials & Fountain Pen Area */
+    .socials {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+    }
+
+    .socials a {
+      color: var(--text-muted);
+      font-size: 1.4rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Fountain Pen Dropdown Menu */
+    .fountain-pen-menu {
+      position: relative;
+      display: inline-block;
+    }
+
+    .fountain-pen-menu button {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .fountain-pen-menu button:hover {
+      color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffffff;
+      min-width: 170px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.12);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      z-index: 100;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .dropdown-content a {
+      color: var(--text-main);
+      padding: 10px 14px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border);
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f3f4f6;
+      color: var(--accent-hover);
+    }
+
+    .show-dropdown {
+      display: block !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Profile Header -->
+    <header class="profile-header">
+      <img src="profile.jpg" alt="İrem Bekdemir" class="avatar">
+      <h1 class="name">İrem Bekdemir</h1>
+      <p class="title">AI Engineering Student & Writer</p>
+      
+      <!-- Typewriter Area -->
+      <div class="bio-container">
+        <p class="bio" id="typewriter"></p>
+      </div>
+    </header>
+
+    <!-- Card 1: About -->
+    <section class="card">
+      <h2 class="card-title"><i class="fa-solid fa-user"></i> About</h2>
+      <p>I am an Artificial Intelligence Engineering undergraduate at Hacettepe University. My focus lies at the intersection of bio-inspired AI, knowledge graphs, and literary arts.</p>
+    </section>
+
+    <!-- Card 2: Technical Focus -->
+    <section class="card">
+      <h2 class="card-title"><i class="fa-solid fa-code"></i> Technical Focus</h2>
+      <div class="tag-container">
+        <span class="tag">Python</span>
+        <span class="tag">C++</span>
+        <span class="tag">Graph Neural Networks</span>
+        <span class="tag">RAG Architectures</span>
+        <span class="tag">ROS / ROS 2</span>
+        <span class="tag">PyTorch</span>
+      </div>
+    </section>
+
+    <!-- Social Links & Interactive Pen -->
+    <footer class="socials">
+      <a href="https://github.com/irembekdemir" target="_blank" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/irembekdemir" target="_blank" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://vsco.co/luzzdelun" target="_blank" aria-label="VSCO">
+        <i class="fa-solid fa-camera"></i>
+      </a>
+      <a href="mailto:irmbekdemir@gmail.com" aria-label="E-mail">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+
+      <!-- Fountain Pen Icon & Dropdown Menu -->
+      <div class="fountain-pen-menu">
+        <button id="penBtn" aria-label="Literary Works">
+          <i class="fa-solid fa-pen-nib"></i>
+        </button>
+        <div id="penDropdown" class="dropdown-content">
+          <a href="https://www.togart.org" target="_blank">togART</a>
+          <a href="https://www.togart.org" target="_blank">Serendipite</a>
+          <a href="https://karakiyisifanzin.blogspot.com" target="_blank">Karakıyısı</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // 1. Typewriter Animation Effect
+    const bioText = "Hi! Welcome to my personal website. This place brings together my technical background and artistic work—from code structures to poetry and prose.";
+    let index = 0;
+    const speed = 35;
+
+    function typeWriter() {
+      if (index < bioText.length) {
+        document.getElementById("typewriter").innerHTML += bioText.charAt(index);
+        index++;
+        setTimeout(typeWriter, speed);
+        }
+    }
+
+    // 2. Fountain Pen Dropdown Logic
+    const penBtn = document.getElementById("penBtn");
+    const penDropdown = document.getElementById("penDropdown");
+
+    penBtn.addEventListener("click", function(e) {
+      e.stopPropagation();
+      penDropdown.classList.toggle("show-dropdown");
+    });
+
+    window.addEventListener("click", function() {
+      if (penDropdown.classList.contains("show-dropdown")) {
+        penDropdown.classList.remove("show-dropdown");
+      }
+    });
+
+    window.onload = typeWriter;
+  </script>
+
+</body>
+</html>
