@@ -44,7 +44,6 @@
       overflow-x: hidden;
     }
 
-    /* Background Canvas */
     #glitterCanvas {
       position: fixed;
       top: 0;
@@ -74,7 +73,6 @@
       }
     }
 
-    /* Glassmorphism Card */
     .card {
       background: var(--card-bg);
       backdrop-filter: blur(12px);
@@ -91,7 +89,6 @@
       box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6), 0 0 20px var(--glow);
     }
 
-    /* Profile Section */
     .profile-card {
       text-align: center;
       display: flex;
@@ -124,7 +121,6 @@
       margin-bottom: 1rem;
     }
 
-    /* Biography Typewriter Effect */
     .bio-container {
       min-height: 48px;
       max-width: 650px;
@@ -153,7 +149,6 @@
       50% { opacity: 0; }
     }
 
-    /* Social Buttons & Menus */
     .socials {
       display: flex;
       justify-content: center;
@@ -186,7 +181,6 @@
       border-color: var(--accent-hover);
     }
 
-    /* Pop-up Dropdown Menus */
     .dropdown-wrapper {
       position: relative;
     }
@@ -312,7 +306,6 @@
   </div>
 
   <script>
-    /* Bio Typewriter Effect */
     const textToType = "Hi! Welcome to my personal website. This place is a bit controversial, since it contains both my technical and artistic work. Which side you are looking for, links are provided below!";
     let charIndex = 0;
     const speed = 35;
@@ -326,7 +319,6 @@
     }
     window.addEventListener('load', typeWriter);
 
-    /* Background Glitter Particles */
     const canvas = document.getElementById('glitterCanvas');
     const ctx = canvas.getContext('2d');
     let stars = [];
@@ -370,373 +362,6 @@
     }
     animateGlitter();
 
-    /* Dropdown Menus Handling */
-    const instaBtn = document.getElementById("instaBtn");
-    const instaDropdown = document.getElementById("instaDropdown");
-    const penBtn = document.getElementById("penBtn");
-    const penDropdown = document.getElementById("penDropdown");
-
-    function closeAllDropdowns() {
-      document.querySelectorAll('.dropdown-menu').forEach(menu => {
-        menu.classList.remove('show-dropdown');
-      });
-    }
-
-    instaBtn.addEventListener("click", function(e) {
-      e.stopPropagation();
-      const isOpen = instaDropdown.classList.contains("show-dropdown");
-      closeAllDropdowns();
-      if (!isOpen) instaDropdown.classList.add("show-dropdown");
-    });
-
-    penBtn.addEventListener("click", function(e) {
-      e.stopPropagation();
-      const isOpen = penDropdown.classList.contains("show-dropdown");
-      closeAllDropdowns();
-      if (!isOpen) penDropdown.classList.add("show-dropdown");
-    });
-
-    window.addEventListener("click", closeAllDropdowns);
-  </script>
-</body>
-</html>      color: var(--text-main);
-      background-color: var(--bg-color);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem 1rem;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* Background Canvas */
-    #glitterCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      pointer-events: none;
-      background: #0b0f19;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 900px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      z-index: 1;
-    }
-
-    @media (min-width: 768px) {
-      .container {
-        grid-template-columns: 1fr 1fr;
-      }
-      .profile-card {
-        grid-column: span 2;
-      }
-    }
-
-    /* Glassmorphism Card */
-    .card {
-      background: var(--card-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.75rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--glow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6), 0 0 20px var(--glow);
-    }
-
-    /* Profile Section */
-    .profile-card {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .avatar {
-      width: 125px;
-      height: 125px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1.2rem;
-      border: 3px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 12px rgba(56, 189, 248, 0.4);
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.25rem;
-      color: var(--text-main);
-    }
-
-    .subtitle {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      margin-bottom: 1rem;
-    }
-
-    /* Biography Typewriter Effect */
-    .bio-container {
-      min-height: 48px;
-      max-width: 650px;
-      margin: 0 auto 1.5rem auto;
-    }
-
-    .bio {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--text-muted);
-      display: inline;
-    }
-
-    .cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1rem;
-      background-color: var(--accent-hover);
-      margin-left: 2px;
-      animation: blink 0.8s infinite;
-      vertical-align: middle;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    /* Social Buttons & Menus */
-    .socials {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.25rem;
-      margin-top: 0.5rem;
-    }
-
-    .social-btn {
-      border: none;
-      color: var(--text-muted);
-      font-size: 1.4rem;
-      cursor: pointer;
-      text-decoration: none;
-      transition: color 0.2s ease, transform 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(30, 41, 59, 0.7);
-      border: 1px solid var(--border);
-    }
-
-    .social-btn:hover {
-      color: var(--accent-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      border-color: var(--accent-hover);
-    }
-
-    /* Pop-up Dropdown Menus */
-    .dropdown-wrapper {
-      position: relative;
-    }
-
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      bottom: 3.2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(10px);
-      min-width: 180px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      z-index: 100;
-      overflow: hidden;
-      animation: popup 0.2s ease-out;
-    }
-
-    @keyframes popup {
-      from { opacity: 0; transform: translate(-50%, 8px); }
-      to { opacity: 1; transform: translate(-50%, 0); }
-    }
-
-    .dropdown-menu a {
-      color: var(--text-main);
-      padding: 10px 14px;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      border-bottom: 1px solid rgba(51, 65, 85, 0.5);
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .dropdown-menu a:last-child {
-      border-bottom: none;
-    }
-
-    .dropdown-menu a:hover {
-      background: rgba(30, 41, 59, 0.9);
-      color: var(--accent-hover);
-    }
-
-    .show-dropdown {
-      display: block !important;
-    }
-  </style>
-</head>
-<body>
-
-  <canvas id="glitterCanvas"></canvas>
-
-  <div class="container">
-    <div class="card profile-card">
-      <img src="profile.jpg" alt="İrem Bekdemir" class="avatar" onerror="this.src='https://via.placeholder.com/125/1e293b/94a3b8?text=İB'">
-      <h1>İrem Bekdemir</h1>
-      <p class="subtitle">AI Engineering & Robotics | Art & Literature</p>
-      
-      <div class="bio-container">
-        <span class="bio" id="typewriter"></span><span class="cursor"></span>
-      </div>
-
-      <div class="socials">
-        <!-- GitHub -->
-        <a href="https://github.com/irembekdemir" target="_blank" class="social-btn" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        
-        <!-- LinkedIn -->
-        <a href="https://linkedin.com/in/irembekdemir" target="_blank" class="social-btn" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-
-        <!-- Instagram -->
-        <div class="dropdown-wrapper">
-          <button class="social-btn" id="instaBtn" aria-label="Instagram Accounts">
-            <i class="fa-brands fa-instagram"></i>
-          </button>
-          <div class="dropdown-menu" id="instaDropdown">
-            <a href="https://instagram.com/luzzdelun" target="_blank">
-              <i class="fa-regular fa-user"></i> Personal Account
-            </a>
-            <a href="https://instagram.com/irmuse" target="_blank">
-              <i class="fa-solid fa-palette"></i> Art Account
-            </a>
-          </div>
-        </div>
-
-        <!-- Writings -->
-        <div class="dropdown-wrapper">
-          <button class="social-btn" id="penBtn" aria-label="Literary Works">
-            <i class="fa-solid fa-pen-nib"></i>
-          </button>
-          <div class="dropdown-menu" id="penDropdown">
-            <a href="https://www.togart.org" target="_blank">
-              <i class="fa-solid fa-feather"></i> togART
-            </a>
-            <a href="https://drive.google.com/file/d/1x1SDc6aQTl7SSVCv8yH0gdjEecLCCy_k/view" target="_blank">
-              <i class="fa-solid fa-book-open"></i> Sérendipité
-            </a>
-            <a href="https://karakiyisifanzin.blogspot.com" target="_blank">
-              <i class="fa-solid fa-scroll"></i> Fanzin Karakıyısı
-            </a>
-          </div>
-        </div>
-
-        <!-- VSCO -->
-        <a href="https://vsco.co/luzzdelun" target="_blank" class="social-btn" aria-label="VSCO">
-          <i class="fa-solid fa-camera"></i>
-        </a>
-
-        <!-- E-mail -->
-        <a href="mailto:irmbekdemir@gmail.com" class="social-btn" aria-label="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    /* Bio Typewriter Effect */
-    const textToType = "Hi! Welcome to my personal website. This place is a bit controversial, since it contains both my technical and artistic work. Which side you are looking for, links are provided below!";
-    let charIndex = 0;
-    const speed = 35;
-
-    function typeWriter() {
-      if (charIndex < textToType.length) {
-        document.getElementById("typewriter").innerHTML += textToType.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeWriter, speed);
-      }
-    }
-    window.addEventListener('load', typeWriter);
-
-    /* Background Glitter Particles */
-    const canvas = document.getElementById('glitterCanvas');
-    const ctx = canvas.getContext('2d');
-    let stars = [];
-    const numStars = 100;
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    for (let i = 0; i < numStars; i++) {
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 1.8 + 0.4,
-        alpha: Math.random(),
-        speed: Math.random() * 0.02 + 0.005
-      });
-    }
-
-    function animateGlitter() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      stars.forEach(star => {
-        star.alpha += star.speed;
-        if (star.alpha > 1 || star.alpha < 0) {
-          star.speed = -star.speed;
-        }
-
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(226, 232, 240, ${Math.abs(star.alpha)})`;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = 'rgba(56, 189, 248, 0.8)';
-        ctx.fill();
-      });
-
-      requestAnimationFrame(animateGlitter);
-    }
-    animateGlitter();
-
-    /* Dropdown Menus Handling */
     const instaBtn = document.getElementById("instaBtn");
     const instaDropdown = document.getElementById("instaDropdown");
     const penBtn = document.getElementById("penBtn");
